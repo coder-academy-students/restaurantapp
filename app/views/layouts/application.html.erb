@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restaurantapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Restaurants', restaurants_path %>
+      <%= link_to 'Features', features_path %>
+      <%= link_to 'Meals', meals_path %>
+      <hr>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

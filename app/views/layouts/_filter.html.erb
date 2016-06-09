@@ -1,0 +1,19 @@
+<div class="card card-block">
+  <h2>Filter by buttons</h2>
+  <h4>Meals available</h4>
+    <% @meals.each do |meal| %>
+      <%= link_to meal.name, root_path(meal: meal), class: 'btn btn-success btn-sm btn-block' %>
+    <% end %>
+  <h4>Features</h4>
+  <% @features.each do |feature| %>
+    <%= link_to feature.name, root_path(feature: feature), class: 'btn btn-info btn-sm btn-block' %>
+  <% end %>
+</div>
+<div class="card card-block">
+  <h2>Filter with form</h2>
+    <%= simple_form_for :filter, url: filter_restaurants_path do |f| %>
+      <%= f.input :meal, collection: @meals %>
+      <%= f.input :feature, collection: @features %>
+      <%= f.submit 'Filter' %>
+    <% end %>
+</div>
