@@ -1,0 +1,7 @@
+<div class="card card-block">
+  <h2>Find by location</h2>
+  <%= simple_form_for :location, url: find_by_location_restaurants_path do |f| %>
+    <%= f.input :location, input_html: { value: @search_location } %>
+    <%= f.submit 'Search' %>
+  <% end %>
+</div>

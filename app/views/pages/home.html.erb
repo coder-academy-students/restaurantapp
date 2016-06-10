@@ -2,38 +2,12 @@
 <hr>
 <div class="row">
   <div class="col-md-3">
-    <div class="card card-block">
-      <h2>Search</h2>
-    </div>
-    <%= render 'layouts/filter' %>
-  
-    <div class="card card-block">
-      <h2>Find by location</h2>
-    </div>
+    <%= render 'shared/search' %>
+    <%= render 'shared/filter' %>
+    <%= render 'shared/filter_form' %>
+    <%= render 'shared/find_by_location' %>
   </div>
   <div class="col-md-9">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Info</th>
-          <th>Location</th>
-          <th>Latitude</th>
-          <th>Longitude</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @restaurants.each do |restaurant| %>
-          <tr>
-            <td><%= link_to restaurant.name, restaurant %></td>
-            <td><%= restaurant.info %></td>
-            <td><%= restaurant.location %></td>
-            <td><%= restaurant.latitude %></td>
-            <td><%= restaurant.longitude %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render 'shared/results' %>
   </div>
 </div>

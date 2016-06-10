@@ -1,0 +1,7 @@
+<div class="card card-block">
+  <h2>Search</h2>
+  <%= simple_form_for :search, url: search_restaurants_path do |f| %>
+    <%= f.input :search, input_html: { value: @search['search']} %>
+    <%= f.submit 'Search' %>
+  <% end %>
+</div>

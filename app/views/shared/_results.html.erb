@@ -1,0 +1,24 @@
+<h2>Results: <%= @meal.name if @meal %> <%= @feature.name if @feature %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Info</th>
+      <th>Location</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= link_to restaurant.name, restaurant %></td>
+        <td><%= restaurant.info %></td>
+        <td><%= restaurant.location %></td>
+        <td><%= restaurant.latitude %></td>
+        <td><%= restaurant.longitude %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,37 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+  def find_by_location
+    if params[:location]
+      @search = params[:location]
+      @search_location = @search['location']
+      @restaurants = Restaurant.near(@search_location, 3)
+    else
+      @restaurants = []
+    end
+  end
+
+  def filter
+    if params[:filter]
+      @search = params[:filter]
+      @meal = Meal.find(@search['meal'])
+      @feature = Feature.find(@search['feature'])
+      @restaurants = @meal.restaurants & @feature.restaurants
+    else
+      @restaurants = []
+    end
+    @meals = Meal.all
+    @features = Feature.all
+  end
+
+  def search
+    if params[:search]
+      @search = params[:search]
+      @restaurants = Restaurant.where("info LIKE ?", "%#{@search[:search]}%")
+    else
+      @restaurants = []
+    end
+  end
   # GET /restaurants
   # GET /restaurants.json
   def index

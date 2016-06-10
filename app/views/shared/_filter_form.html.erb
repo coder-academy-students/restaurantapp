@@ -1,0 +1,8 @@
+<div class="card card-block">
+  <h2>Filter with form</h2>
+    <%= simple_form_for :filter, url: filter_restaurants_path do |f| %>
+      <%= f.input :meal, collection: @meals %>
+      <%= f.input :feature, collection: @features %>
+      <%= f.submit 'Filter' %>
+    <% end %>
+</div>

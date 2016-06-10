@@ -1,24 +1,17 @@
-# README
+# Setup instructions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Fork and clone
 
-Things you may want to cover:
+`git clone ...`
 
-* Ruby version
+### Bundle, migrate and seed
 
-* System dependencies
+`cd restaurantapp`
+`bundle`
+`rails db:create`
+`rails db:seed`
+`rails s`
 
-* Configuration
+### Try the different search functions out.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+They're not perfect but they should give you an idea on the different ways you can search and filter results

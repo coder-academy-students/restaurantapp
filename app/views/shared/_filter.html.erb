@@ -1,0 +1,16 @@
+<div class="card card-block">
+  <h2>Filter by buttons</h2>
+  <h4>Meals available</h4>
+    <% @meals.each do |meal| %>
+        <% if @meal == meal %>
+          <%= link_to meal.name, root_path(meal: meal), class: 'btn btn-block btn-sm btn-default' %>
+        <% else %>
+          <%= link_to meal.name, root_path(meal: meal), class: 'btn btn-block btn-sm btn-success' %>
+        <% end %>
+    <% end %>
+  <h4>Features</h4>
+  <% @features.each do |feature| %>
+    <%= link_to feature.name, root_path(feature: feature), class: 'btn btn-info btn-sm btn-block' %>
+  <% end %>
+  <%= link_to 'Clear all', root_path, class: 'btn btn-sm btn-block btn-warning' %>
+</div>
