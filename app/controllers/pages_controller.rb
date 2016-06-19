@@ -26,6 +26,5 @@ class PagesController < ApplicationController
     else
       @restaurants = Restaurant.all
     end
-
   end
 end
